@@ -1,0 +1,47 @@
+.main-div {
+  margin: 100px 100px 0 300px;
+  width: 50%;
+  height: 600px;
+  border-style: solid;
+  border-color: rgb(53, 168, 235);
+  text-align: center;
+  font-family: sans-serif;
+}
+select {
+  width: 100px;
+  background-color: rgb(145, 224, 255);
+}
+.sub-div {
+  height: 70px;
+  background: red;
+  font-size: 40px;
+  color: white;
+}
+.table {
+  margin: 35px 30px 100px 200px;
+}
+.right {
+  color: green;
+  size: 23px;
+  cursor: pointer;
+}
+.wrong {
+  color: red;
+  size: 23px;
+  cursor: pointer;
+}
+.subtable {
+  padding-left: 100px;
+}
+.main-content {
+  padding-bottom: 150px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.tablediv {
+  margin-bottom: 40px;
+}

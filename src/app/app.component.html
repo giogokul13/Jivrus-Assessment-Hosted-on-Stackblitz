@@ -1,0 +1,94 @@
+<div class="main-div">
+  <div class="sub-div">
+    <b>Course and Students Maintenance</b>
+  </div>
+  <div class="table">
+    <table>
+      <div class="main-content">
+        <tr>
+          <td class="title">Course</td>
+          <div class="subtable">
+            <td>
+              <tr>
+                <select
+                  [(ngModel)]="courseSelect"
+                  (change)="selectChangeCourse(courseSelect)"
+                >
+                  <option
+                    *ngFor="let course of coursearray"
+                    value="{{course.id}}"
+                  >
+                    {{ course.course }}
+                  </option>
+                </select>
+              </tr>
+              <tr>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm mt-2 mb-2"
+                  (click)="addcourse()"
+                >
+                  Add Course
+                </button>
+              </tr>
+              <tr>
+                <div *ngIf="iscoursedisplay" class="showcourse">
+                  <input
+                    type="text"
+                    [(ngModel)]="courseName"
+                    id="courseValue"
+                    required
+                  />
+                  <p class="right" (click)="addcourselist()">&#10004;</p>
+                  <p class="wrong" (click)="chide()">&#10006;</p>
+                </div>
+              </tr>
+            </td>
+          </div>
+        </tr>
+      </div>
+
+      <div class="main-content">
+        <tr>
+          <td class="title">Students</td>
+          <div class="subtable">
+            <td>
+              <tr>
+                <select name="student" id="student">
+                  <option *ngFor="let student of studentarray">
+                    <div *ngIf="student.courseid == selectedCourse">
+                      {{student.student}}
+                    </div>
+                  </option>
+                </select>
+              </tr>
+              <tr>
+                <button
+                  [hidden]="isCourseSelected"
+                  type="button"
+                  class="btn btn-primary btn-sm mt-2 mb-2"
+                  (click)="addstudent()"
+                >
+                  Add Student
+                </button>
+              </tr>
+              <tr>
+                <div *ngIf="isstudentdisplayed" class="showstudents">
+                  <input
+                    type="text"
+                    [(ngModel)]="studentName"
+                    id="studentValue"
+                    name="studentvalue"
+                    required
+                  />
+                  <p class="right" (click)="addstudentlist()">&#10004;</p>
+                  <p class="wrong" (click)="shide()">&#10006;</p>
+                </div>
+              </tr>
+            </td>
+          </div>
+        </tr>
+      </div>
+    </table>
+  </div>
+</div>
